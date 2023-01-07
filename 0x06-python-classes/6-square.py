@@ -46,10 +46,6 @@ class Square:
 
     def my_print(self):
         """ prints in stdout the square with the character # """
-        if self.__position[1] > 0:
-            for b in range(self.__position[1]):
-                print("")
-
         if self.__size <= 0:
             print("")
         else:
@@ -57,6 +53,9 @@ class Square:
                 if self.__position[0] > 0:
                     for a in range(self.__position[0]):
                         print(" ", end="")
+                if self.__position[1] > 0:
+                    for b in range(self.__position[1]):
+                        print("")
                 for j in range(self.__size):
                     print("#", end="")
                 print()

@@ -67,7 +67,7 @@ class Square:
             return square
         if self.__position[1] > 0:
             for b in range(self.__position[1]):
-                square = ""
+                square = "\n"
         for i in range(self.__size):
             if self.__position[0] > 0:
                 for a in range(self.__position[0]):

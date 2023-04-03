@@ -1,0 +1,66 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+A function that adds 2 integers
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+Test for two positive integers:
+
+	>>> print(add_integer(4, 12))
+	16
+
+Test for atleast one negative integer:
+
+	>>> print(add_integer(99, -4))
+	95
+	>>> print(add_integer(-79, -5))
+	-84
+
+Test for atleast one float:
+
+	>>> print(add_integer(13.2, 56))
+	69
+	>>> print(add_integer(100.4, 49.5))
+	149
+
+Test for a float and a negative value:
+
+	>>> print(add_integer(14.8, -7))
+	7
+
+Test if no integer is provided:
+
+	>>> print(add_integer())
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test if only one argument is provided(b defaults to 98):
+
+	>>> print(add_integer(6))
+	104
+
+Test for not integer:
+
+	>>> print(add_integer(6, 'cat'))
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+	>>> print(add_integer('cat', 6))
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Test for more than two arguments:
+
+	>>> print(add_integer(1, 5, 67))
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given

@@ -1,0 +1,105 @@
+The ``2-matrix_divided`` module
+===============================
+
+Using ``matrix_divided``
+------------------------
+
+A function that divides all elements of a matrix
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+Test if the matrix is a list:
+
+	>>> print(matrix_divided(([1,2,3], [4,5,6]), 2))
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test if the matrix is a list of lists:
+
+	>>> print(matrix_divided([(7,8,9), (4,5,6)], 5))
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test if matrix list is None:
+
+	>>> print(matrix_divided([[None]], 7))
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test for matrix of strings:
+
+	>>> print(matrix_divided([['cat'], ['dog']], 7))
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test for row size if the same or not:
+
+	>>> print(matrix_divided([[1,2,3], [4,5,6,7]], 2))
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+Test for div if provided:
+
+	>>> print(matrix_divided([[11,12,13], [4,5,6]]))
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test if no arguments are provided:
+
+	>>> print(matrix_divided())
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Test if div is an int or float:
+
+	>>> print(matrix_divided([[11,12,13], [14,15,16]], 'cat'))
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+Test if div is equal to zero:
+
+	>>> print(matrix_divided([[11,12,13], [14,15,16]], 0))
+	Traceback (most recent call last):
+		...
+	ZeroDivisionError: division by zero
+
+Test for div is a negative number:
+
+	>>> print(matrix_divided([[11,12,13], [53, 76, 87]], -8))
+	[[-1.38, -1.5, -1.62], [-6.62, -9.5, -10.88]]
+
+Test for integer matrix with integer div:
+
+	>>> print(matrix_divided([[11,12,13], [53, 76, 87]], 6))
+	[[1.83, 2.0, 2.17], [8.83, 12.67, 14.5]]
+
+Test for integer matrix with float div:
+
+	>>> print(matrix_divided([[11,12,13], [53, 76, 87]], 47.6))
+	[[0.23, 0.25, 0.27], [1.11, 1.6, 1.83]]
+
+Test for float matrix with integer div:
+
+	>>> print(matrix_divided([[11.8,12.6,13.24], [53.1, 76.9, 87.35]], 47))
+	[[0.25, 0.27, 0.28], [1.13, 1.64, 1.86]]
+
+Test for float matrix with float div:
+
+	>>> print(matrix_divided([[11.8,12.6,13.24], [53.1, 76.9, 87.3]], 4.97))
+	[[2.37, 2.54, 2.66], [10.68, 15.47, 17.57]]
+
+Test for matrix with negative numbers:
+
+	>>> print(matrix_divided([[-118,-126,-134], [-531, -769, -873]], 49))
+	[[-2.41, -2.57, -2.73], [-10.84, -15.69, -17.82]]
+	

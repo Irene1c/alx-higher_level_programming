@@ -102,4 +102,8 @@ Test for matrix with negative numbers:
 
 	>>> print(matrix_divided([[-118,-126,-134], [-531, -769, -873]], 49))
 	[[-2.41, -2.57, -2.73], [-10.84, -15.69, -17.82]]
-	
+
+Test for div == float('inf')(infinity):
+
+	>>> print(matrix_divided([[11,12,13], [3, 7, 8]], float('inf')))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]

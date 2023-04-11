@@ -1,0 +1,57 @@
+The ``1-my_list`` module
+========================
+
+Using ``print_sorted``
+----------------------
+
+Assumes all elements are of type int:
+
+	>>> MyList = __import__('1-my_list').MyList
+
+Now use it:
+
+print_sorted list of unsorted list with negative integers:
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(5)
+	>>> my_list.append(-3)
+	>>> my_list.append(0)
+	>>> my_list.append(9)
+	>>> my_list.append(-2)
+	>>> print(my_list)
+	[1, 5, -3, 0, 9, -2]
+
+The list is sorted in ascending order:
+
+	>>> my_list.print_sorted()
+	[-3, -2, 0, 1, 5, 9]
+
+print_sorted returns a new list:
+
+	>>> print(my_list)
+	[1, 5, -3, 0, 9, -2]
+
+
+print_sorted list of a sorted list with large value integers:
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(22)
+	>>> my_list.append(967)
+	>>> my_list.append(561468462136416)
+	>>> print(my_list)
+	[1, 22, 967, 561468462136416]
+
+The list does not sort:
+
+	>>> my_list.print_sorted()
+	[1, 22, 967, 561468462136416]
+
+Test for empty list:
+
+	>>> my_list = MyList()
+	>>> print(my_list)
+	[]
+	>>> my_list.print_sorted()
+	[]

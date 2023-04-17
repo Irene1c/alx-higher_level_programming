@@ -16,9 +16,44 @@ Validating if value is an integer:
 	>>> basegeometry.integer_validator("width", 89)
 	
 
-If value is not an integer:
+If value is a string:
 
 	>>> basegeometry.integer_validator("height", "Mary")
+	Traceback (most recent call last):
+		...
+	TypeError: height must be an integer
+
+If value is a list:
+
+	>>> basegeometry.integer_validator("height", [3])
+	Traceback (most recent call last):
+		...
+	TypeError: height must be an integer
+
+If value is a bool:
+
+	>>> basegeometry.integer_validator("height", True)
+	Traceback (most recent call last):
+		...
+	TypeError: height must be an integer
+
+If value is a tuple:
+
+	>>> basegeometry.integer_validator("height", (4,))
+	Traceback (most recent call last):
+		...
+	TypeError: height must be an integer
+
+If value is a set:
+
+	>>> basegeometry.integer_validator("height", {4, 6})
+	Traceback (most recent call last):
+		...
+	TypeError: height must be an integer
+
+If value is None:
+
+	>>> basegeometry.integer_validator("height", None)
 	Traceback (most recent call last):
 		...
 	TypeError: height must be an integer
@@ -34,6 +69,20 @@ Validate if value is zero or less than 0:
 	Traceback (most recent call last):
 		...
 	ValueError: height must be greater than 0
+
+Integer validation with no arguments:
+
+	>>> basegeometry.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Integer validation with one arguments:
+
+	>>> basegeometry.integer_validator("height")
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 Raise area Exception:
 

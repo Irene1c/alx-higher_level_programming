@@ -30,6 +30,11 @@ class TestRectangle(unittest.TestCase):
 
         self.assertRaises(TypeError, Rectangle, (9))
 
+    def test_more_args(self):
+        """ testing for out of range arguments passed """
+
+        self.assertRaises(TypeError, Rectangle, (9, 2, 4, 1, 88, 5, 1))
+
     def test_no_arg(self):
         """ testing for no argument passed """
 

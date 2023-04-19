@@ -5,7 +5,7 @@
 
 
 def write_file(filename="", text=""):
-    """ function thar writes to a text file"""
+    """ function that writes to a text file"""
 
     with open(filename, "w", encoding="utf-8") as file:
         return file.write(text)

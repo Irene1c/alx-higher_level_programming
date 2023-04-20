@@ -54,6 +54,22 @@ class TestBase(unittest.TestCase):
         self.assertEqual(li2, b_list)
         self.assertIsInstance(b_list, dict)
 
+        c_list = Square.from_json_string(None)
+        self.assertEqual([], c_list)
+        self.assertIsInstance(c_list, list)
+
+        d_list = Rectangle.from_json_string(None)
+        self.assertEqual([], d_list)
+        self.assertIsInstance(d_list, list)
+
+        e_list = Square.from_json_string('{}')
+        self.assertEqual({}, e_list)
+        self.assertIsInstance(e_list, dict)
+
+        f_list = Rectangle.from_json_string('{}')
+        self.assertEqual({}, f_list)
+        self.assertIsInstance(f_list, dict)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -5,6 +5,7 @@
     your future classes and to avoid duplicating the same code
 """
 import json
+from os.path import exists
 
 
 class Base:
@@ -65,3 +66,21 @@ class Base:
             dummy = cls(9)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances """
+
+        list_inst = []
+        filename = f"{cls.__name__}.json"
+
+        if exists(filename):
+            with open(filename, 'r', encoding="utf-8") as f:
+                j_content = f.read()
+            l_input = cls.from_json_string(j_content)
+            for d in l_input:
+                inst = cls.create(**d)
+                list_inst.append(inst)
+            return list_inst
+        else:
+            return []

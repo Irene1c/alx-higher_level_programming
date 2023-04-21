@@ -70,6 +70,27 @@ class TestBase(unittest.TestCase):
         self.assertEqual({}, f_list)
         self.assertIsInstance(f_list, dict)
 
+    def test_save_to_file(self):
+        """ test for JSON string to file """
+
+        s2 = Square(1, 4, 5, 74)
+        Square.save_to_file([s2])
+        s_json = '[{"id": 74, "size": 1, "x": 4, "y": 5}]'
+
+        with open("Square.json", "r") as file:
+            s_contents = file.read()
+        self.assertIsInstance(s_contents, str)
+        self.assertEqual(s_contents, s_json)
+
+        r3 = Rectangle(5, 3, 6, 1, 51)
+        Rectangle.save_to_file([r3])
+        r_json = '[{"id": 51, "width": 5, "height": 3, "x": 6, "y": 1}]'
+
+        with open("Rectangle.json", "r") as file:
+            r_contents = file.read()
+        self.assertIsInstance(r_contents, str)
+        self.assertEqual(r_contents, r_json)
+
 
 if __name__ == "__main__":
     unittest.main()

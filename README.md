@@ -1,1 +1,1 @@
-# alx-higher_level_programming
+# JavaScript - Objects, Scopes and Closures

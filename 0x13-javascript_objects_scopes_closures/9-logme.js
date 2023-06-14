@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let count = 0;
+let count = -1;
 exports.logMe = function (item) {
   let arg = '';
   for (let i = 0; i < item.length; i++) {

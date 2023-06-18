@@ -20,8 +20,8 @@ if __name__ == "__main__":
     query = "SELECT cities.id, cities.name, states.name FROM cities INNER\
     JOIN states ON states.id = cities.state_id ORDER BY cities.id ASC"
     cur.execute(query)
-    row_states = cur.fetchall()
-    for i in row_states:
+    row_cities = cur.fetchall()
+    for i in row_cities:
         print(i)
 
     cur.close()

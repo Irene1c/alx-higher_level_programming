@@ -24,5 +24,3 @@ if __name__ == "__main__":
     q = session.query(City, State).join(State).order_by(City.id.asc()).all()
     for city, state in q:
         print(f"{state.name}: ({city.id}) {city.name}")
-
-session.close()

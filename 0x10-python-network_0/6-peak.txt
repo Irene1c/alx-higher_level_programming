@@ -1,2 +1,1 @@
-Time complexity of algorithm of finding a peak in a list of unsorted integers
 O(n)

@@ -4,7 +4,7 @@
 */
 
 $(document).ready(function () {
-  $.get('https://hellosalut.stefanbohacek.dev/?lang=fr', function (data) {
+  $.get('https://fourtonfish.com/hellosalut/?lang=fr', function (data) {
     const charHello = data.hello;
     $('#hello').text(charHello);
   }).fail(function (error) {
